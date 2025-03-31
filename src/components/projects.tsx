@@ -43,7 +43,7 @@ export function Projects() {
     },
     {
       "id": 2,
-      "title": "MV-Live",
+      "title": "MV-Live (In Collabration)",
       "description": "A platform where friends can stream web series, movies, and more together in real-time.",
       "details": "MV-Live enables users to create virtual watch parties with synchronized streaming and live chat. With WebRTC for low-latency communication and Socket.io for real-time interactions, it enhances group entertainment.",
       "category": "web",
