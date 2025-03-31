@@ -1,0 +1,15 @@
+import { MetadataRoute } from 'next';
+
+// Use your profile image as favicon
+export default function Favicon(): MetadataRoute.Favicon {
+  return [
+    {
+      rel: 'icon',
+      url: '/Asset/ayush.jpg',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/Asset/ayush.jpg',
+    }
+  ];
+} 
