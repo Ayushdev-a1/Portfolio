@@ -1,9 +1,5 @@
 {
-  "buildCommand": "npm run build:vercel",
-  "installCommand": "npm install",
+  "buildCommand": "next build",
   "framework": "nextjs",
-  "outputDirectory": "out",
-  "env": {
-    "NEXT_TELEMETRY_DISABLED": "1"
-  }
+  "outputDirectory": "out"
 } 
