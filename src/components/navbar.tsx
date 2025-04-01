@@ -41,7 +41,7 @@ export function Navbar() {
         </nav>
         
         <div className="flex items-center justify-between gap-2">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           
           {/* Desktop CTA Button */}
           <Link 
