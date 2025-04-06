@@ -57,9 +57,9 @@ export function Projects() {
         "Adaptive video quality",
         "Cloud storage for media"
       ],
-      "repository": "https://github.com/your-repo/mv-live",
-      "website": "https://mv-live.com",
-      "status": "In Development"
+      "repository": "https://github.com/Ayushdev-a1/streamer.git",
+      "website": "https://mv-live.netlify.app/",
+      "status": "Deployed"
     },
     {
       "id": 5,
