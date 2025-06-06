@@ -12,6 +12,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Menu, X, ExternalLink, Github, Eye, Code } from "lucide-react";
+import MV from "../Asset/MV.png";
 
 export function Projects() {
   const projectCategories = [
@@ -28,7 +29,7 @@ export function Projects() {
       "description": "A Full-Stack Music Streaming App",
       "details": "Rthymix is a modern music streaming platform built using the MERN stack. It features song uploads, likes, play count tracking, and listening history. Users can upload their songs, set them as public or private, and enjoy a seamless music experience.",
       "category": "web",
-      "image": "/assets/rthymix-preview.jpg",
+      // "image": "/assets/rthymix-preview.jpg",
       "techStack": ["React", "Node.js", "MongoDB", "Express", "Cloudinary"],
       "features": [
         "User authentication & profiles",
@@ -39,7 +40,7 @@ export function Projects() {
       ],
       "repository": "https://github.com/your-repo/rthymix",
       "website": "https://rthymix.com",
-      "status": "In Development"
+      "status": false
     },
     {
       "id": 2,
@@ -47,7 +48,7 @@ export function Projects() {
       "description": "A platform where friends can stream web series, movies, and more together in real-time.",
       "details": "MV-Live enables users to create virtual watch parties with synchronized streaming and live chat. With WebRTC for low-latency communication and Socket.io for real-time interactions, it enhances group entertainment.",
       "category": "web",
-      "image": "/assets/mv-live-preview.jpg",
+      "image": MV,
       "techStack": ["Socket.io", "WebRTC", "MERN Stack", "Multer",],
       "features": [
         "Real-time synchronized streaming",
@@ -57,17 +58,17 @@ export function Projects() {
         "Adaptive video quality",
         "Cloud storage for media"
       ],
-      "repository": "https://github.com/your-repo/mv-live",
-      "website": "https://mv-live.com",
-      "status": "In Development"
+      "repository": "https://github.com/Ayushdev-a1/MVLive.git",
+      "website": "https://mv-live.netlify.app/",
+      "status": true
     },
     {
       "id": 5,
-      "title": "Discord-Like Communication Platform",
+      "title": "WhatsApp Clone",
       "description": "A real-time messaging and calling platform.",
-      "details": "Inspired by Discord, this platform enables real-time text messaging, voice rooms, and video calling using WebRTC and Socket.io. It provides seamless communication with rich features like private and public servers, user roles, and media sharing.",
+      "details": "Inspired by WhatsApp, this platform enables real-time text messaging, voice rooms, and video calling using WebRTC and Socket.io. It provides seamless communication with rich features like private and public servers, user roles, and media sharing.",
       "category": "web",
-      "image": "/assets/discord-clone-preview.jpg",
+      // "image": "/assets/discord-clone-preview.jpg",
       "techStack": ["Socket.io", "WebRTC", "React", "Node.js", "MongoDB", "Redux"],
       "features": [
         "Real-time messaging",
@@ -76,28 +77,28 @@ export function Projects() {
         "User authentication & role management",
         "Media & file sharing"
       ],
-      "repository": "https://github.com/your-repo/discord-clone",
+      "repository": "https://github.com/Ayushdev-a1/WhatsApp-Clone.git",
       "website": "https://your-discord-clone.com",
-      "status": "Under Development"
+      "status": true
     },
-    {
-      "id": 6,
-      "title": "FitNxNova",
-      "description": "A startup for fit trousers & clothing.",
-      "details": "FitNxNova is a clothing startup focusing on fit trousers and apparel. The initial website will serve as an announcement page, hinting at something exciting coming soon. Future phases will include a full-fledged e-commerce platform with custom fit recommendations and online shopping.",
-      "category": "web",
-      "image": "/assets/fitnxnova-preview.jpg",
-      "techStack": ["Next.js", "Tailwind CSS", "Node.js", "Stripe", "MongoDB"],
-      "features": [
-        "Landing page with an announcement",
-        "Future e-commerce integration",
-        "Custom fit recommendations",
-        "Secure payments & order tracking"
-      ],
-      "repository": "https://github.com/your-repo/fitnxnova",
-      "website": "https://fitnxnova.com",
-      "status": "Early Development"
-    }
+    // {
+    //   "id": 6,
+    //   "title": "FitNxNova",
+    //   "description": "A startup for fit trousers & clothing.",
+    //   "details": "FitNxNova is a clothing startup focusing on fit trousers and apparel. The initial website will serve as an announcement page, hinting at something exciting coming soon. Future phases will include a full-fledged e-commerce platform with custom fit recommendations and online shopping.",
+    //   "category": "web",
+    //   "image": "/assets/fitnxnova-preview.jpg",
+    //   "techStack": ["Next.js", "Tailwind CSS", "Node.js", "Stripe", "MongoDB"],
+    //   "features": [
+    //     "Landing page with an announcement",
+    //     "Future e-commerce integration",
+    //     "Custom fit recommendations",
+    //     "Secure payments & order tracking"
+    //   ],
+    //   "repository": "https://github.com/your-repo/fitnxnova",
+    //   "website": "https://fitnxnova.com",
+    //   "status": "Early Development"
+    // }
   ]
 
   const container = {
@@ -129,7 +130,7 @@ export function Projects() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a10_1px,transparent_1px),linear-gradient(to_bottom,#0f172a10_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full filter blur-3xl opacity-30 translate-x-1/4 -translate-y-1/4"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full filter blur-3xl opacity-30 -translate-x-1/4 translate-y-1/4"></div>
-      
+
       <div className="container px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -211,9 +212,9 @@ export function Projects() {
               >
                 <Card className="h-full transform transition-all duration-300 hover:scale-[1.03] hover:shadow-xl backdrop-blur-sm bg-background/70 border-primary/10 hover:border-primary/30 overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-                  
+
                   <CardHeader className="relative z-10 pb-3">
                     <div className="flex justify-between items-start mb-2">
                       <CardTitle className="text-xl font-bold">
@@ -223,10 +224,10 @@ export function Projects() {
                     </div>
                     <CardDescription className="text-sm">{project.description}</CardDescription>
                   </CardHeader>
-                  
+
                   <CardContent className="pt-0 pb-4 relative z-10">
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{project.details}</p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.techStack.map((tech) => (
                         <Badge key={tech} variant="secondary" className="bg-primary/5 hover:bg-primary/10 text-xs transition-colors">
@@ -234,13 +235,13 @@ export function Projects() {
                         </Badge>
                       ))}
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button 
-                            variant="default" 
-                            size="sm" 
+                          <Button
+                            variant="default"
+                            size="sm"
                             className="gap-1 flex-1 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
                           >
                             <Eye className="w-4 h-4" /> View Project
@@ -257,15 +258,19 @@ export function Projects() {
                             <div className="aspect-video relative rounded-lg overflow-hidden bg-muted/50 mb-4">
                               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-tr from-background/60 to-background/40">
                                 <div className="text-center max-w-md mx-auto p-4">
-                                  <h3 className="text-xl font-semibold mb-2">Preview Coming Soon</h3>
-                                  <p className="text-muted-foreground text-sm">The project preview will be available shortly.</p>
+                                  <h3 className="text-xl font-semibold mb-2">{project.status ? "Go through with repo. " : "Preview Coming Soon"}</h3>
+                                  <p className="text-muted-foreground text-sm">{project.status ? "Go through with live preview." : "The project preview will be available shortly."}</p>
                                   <div className="mt-4 flex gap-4 justify-center">
-                                    <Button variant="outline" size="sm" className="gap-1 opacity-70 cursor-not-allowed">
-                                      <Code className="w-4 h-4" /> Source Code
-                                    </Button>
-                                    <Button variant="outline" size="sm" className="gap-1 opacity-70 cursor-not-allowed">
-                                      <ExternalLink className="w-4 h-4" /> Live Demo
-                                    </Button>
+                                    <a href={project.repository} target="blank">
+                                      <Button variant="outline" size="sm" className="gap-1 opacity-70 cursor-allowed">
+                                        <Code className="w-4 h-4" />Source Code
+                                      </Button>
+                                    </a>
+                                    <a href={project.website} target="_blank" rel="noopener noreferrer">
+                                      <Button variant="outline" size="sm" className="gap-1 opacity-70 cursor-allowed">
+                                        <ExternalLink className="w-4 h-4" /> Live Demo
+                                      </Button>
+                                    </a>
                                   </div>
                                 </div>
                               </div>
@@ -291,8 +296,8 @@ export function Projects() {
                               </div>
                               <div>
                                 <h4 className="font-semibold mb-2">Status</h4>
-                                <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200">In Development</Badge>
-                                <p className="text-sm text-muted-foreground mt-2">The code repository will be available soon.</p>
+                                <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200">{project.status ? "Completed" : "In Development"}</Badge>
+                                <p className="text-sm text-muted-foreground mt-2">{project.status ? "The code repository will be available ! Go through it." : "The code repository will be available soon."}</p>
                               </div>
                             </div>
                           </div>
