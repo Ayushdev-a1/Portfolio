@@ -48,7 +48,7 @@ export function Hero() {
           >
             <div className="relative z-10 aspect-square overflow-hidden rounded-full border bg-muted/50 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px]">
               <Image
-                src="/Asset/ayush.jpg"
+                src="/Asset/ayush.png"
                 alt="Ayush Anand"
                 fill
                 className="object-cover"
