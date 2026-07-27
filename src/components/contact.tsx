@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import emailjs from '@emailjs/browser';
 
 type ContactInfo = {
   icon: string;
@@ -85,46 +84,32 @@ export function Contact() {
     setIsLoading(true);
     setErrorMessage(null);
 
-    // For demo purposes - simulates successful submission
-    // when offline, comment this out for production
     if (isOffline) {
-      // If offline, simulate successful submission for demo
-      setShowDialog(true);
-      setFormData({ name: "", email: "", message: "" });
+      setErrorMessage("You appear to be offline. Please check your internet connection and try again.");
       setIsLoading(false);
       return;
     }
 
     try {
-      // Initialize EmailJS
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
-      console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "")
-      // Send email
-      await emailjs.send(
-       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",   
-       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "", 
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_name: 'Ayush Anand',
-        }
-      );
-      
-      // Show success message and reset form
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const json = await response.json().catch(() => null);
+        const message = json?.error || "Failed to send message. Please try again later.";
+        throw new Error(message);
+      }
+
       setShowDialog(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error('Error sending email:', error);
-      
-      // Specific error handling
-      if (isOffline) {
-        setErrorMessage("You appear to be offline. Please check your internet connection and try again.");
-      } else if (error instanceof Error) {
-        setErrorMessage(`Failed to send message: ${error.message}`);
-      } else {
-        setErrorMessage("Failed to send message. Please try contacting directly via email.");
-      }
+      console.error("Error sending email:", error);
+      setErrorMessage(error instanceof Error ? error.message : "Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
